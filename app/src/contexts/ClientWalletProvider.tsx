@@ -10,10 +10,10 @@ import {
 } from '@solana/wallet-adapter-wallets';
 import { useMemo } from "react";
 
-import('@solana/wallet-adapter-react-ui/styles.css' ) ;
+import '@solana/wallet-adapter-react-ui/styles.css';
 
 export function ClientWalletProvider(
-  props
+  props: any
 ){
   const wallets = useMemo(
     () => [

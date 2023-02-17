@@ -31,6 +31,7 @@ export default function Home() {
  const [posts, setPosts] = useState<PostType[]>([]);
  const [fetchedPosts, setFetchedPosts] = useState(false);
  useEffect(() => {
+  console.log(programContext);
   if (programContext.postProgram) {
    if (!fetchedPosts) {
     fetchPosts();
@@ -50,6 +51,7 @@ export default function Home() {
  async function fetchPosts() {
   try {
    let posts: any = await getAllPosts({ program: programContext.postProgram! });
+   console.log(posts);
    posts.sort(
     (a: { timestamp: string }, b: { timestamp: string }) =>
      parseInt(b.timestamp) - parseInt(a.timestamp)

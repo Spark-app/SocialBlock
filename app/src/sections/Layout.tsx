@@ -10,7 +10,7 @@ import { UseProgramContext } from "../contexts/programContextProvider";
 import { newUser } from "../program/user/user-methods";
 import { CheckWallet } from "../utils/walletError";
 
-const Layout = ({
+function Layout ({
  children,
  active,
  page = "default",
@@ -18,7 +18,7 @@ const Layout = ({
  children: ReactNode;
  active?: number;
  page?: string;
-}) => {
+}) {
  const { notify } = useNotifier();
  let ProgramContext = UseProgramContext();
  async function signup(username: string) {
@@ -65,6 +65,7 @@ const Layout = ({
    <Head>
     <link rel="icon" href="/logo.svg" />
    </Head>
+   {console.log("yes")}
    {ProgramContext?.showSignupModal && (
     <SignupModal signup={signup} setShowSignupModal={ProgramContext.setShowSignupModal} />
    )}

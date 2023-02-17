@@ -3,6 +3,7 @@
   "scripts": {
     "dev": "next dev -p 7000",
     "build": "next build",
+    "prestart": "next build",
     "start": "next start -p 7000",
     "export": "next build && next export"
   },
